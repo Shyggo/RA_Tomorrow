@@ -1,0 +1,15 @@
+<view class="title">员工登录</view>
+<view class='weather-wrapper'>
+	<view class='input_space'>
+		<input placeholder-class="phcolor" class="input_border" placeholder='请输入账号' bindinput="getName" value="{{username}}" maxlength='10' />
+	</view>
+	<view class='input_space'>
+		<input placeholder-class="phcolor" class="input_border" placeholder='请输入密码' bindinput="getPassWord" value="{{phone}}" maxlength='10' />
+	</view>
+	<view class='input_space'>
+		<Select prop-array='{{selectArray}}'  bind:myget='getData' ></Select>
+	</view>
+	<!-- 提交按钮 -->
+	<button class='submit_button' bindtap='formSubmit' type='primary'>登陆</button>
+  <image class='weather-bg'  src='cloud://cloud1-2g66ihwn498306a8.636c-cloud1-2g66ihwn498306a8-1308085111/img/black.jpg'></image>
+</view>

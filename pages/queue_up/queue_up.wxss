@@ -1,0 +1,62 @@
+/* 就餐人数选择 */
+.customerNum_choice {
+  color: red;
+  margin: 30rpx;
+  font-size: 45rpx;
+  text-align: center;
+}
+
+.order_space {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20rpx;
+}
+/* 大小桌分别占的空间 */
+.respective_order {
+  margin: 20rpx;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.order_text {
+  font-size: 1.2rem;
+  margin-bottom: 30rpx;
+  margin-top: 30rpx;
+}
+/* 排号信息中的客人桌号 */
+.order_text .customerNum {
+  color: red;
+  font-size: 1.2rem;
+}
+
+.table_num {
+  background: #ee3c06;
+  color: white;
+  text-align: center;
+  width: 500rpx;
+  padding: 40rpx;
+  font-size: 1.4rem;
+  border-radius: 40rpx;
+}
+
+  /* 过号信息 */
+.ordered {
+  background: gray;
+}
+
+/* 可就餐提示 */
+.ready_info {
+  margin-top: 40rpx;
+  font-size: 48rpx;
+  color: #66CD00;
+}
+
+  /* 重排按钮 */
+.reorder_info {
+  font-size: 42rpx;
+  text-align: center;
+  margin-top: 40rpx;
+  text-decoration: underline;
+}

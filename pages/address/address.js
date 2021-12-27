@@ -1,45 +1,49 @@
+// 实现店铺定位的页面
 Page({
   data: {
-    //店铺经纬度
-    latitude: 30.353351,
-    longitude: 120.231010,
-    //标记点
+    // 声明店铺的经纬度位置
+    latitude: 39.10231,
+    longitude: 117.17127,
+    // 标记属性
     markers: [{
       id: 0,
-      name: "编程小石头",
-      address: "杭州市丁兰广场C座",
-      latitude: 30.353351,
-      longitude: 120.231010,
+      name: "南开一食堂",
+      address: "南开一食堂",
+      latitude: 39.10231,
+      longitude: 117.17127,
       width: 50,
       height: 50
     }]
 
   },
-  //拨打电话
-  Call() {
+  // 显示电话号，拨打
+  phoneCallFunc() {
     wx.makePhoneCall({
-      phoneNumber: '2501902696' //仅为示例，这个号码也是石头哥的微信号
+      phoneNumber: '13522918897' 
     })
   },
-  //复制微信
-  Copy() {
+  // 复制输入的微信（手机号）
+  getWeChatFunc() {
     wx.setClipboardData({
-      data: '2501902696',
+      data: '13522918897', // 此处暂存编者卢紫宇的手机号
     })
   },
-  //导航
-  navRoad(event) {
+  // 根据经纬度属性的导航信息展示
+  locationShowerFunc(event) {
     console.log(event)
-    wx.getLocation({ //获取当前经纬度
-      type: 'wgs84', //返回可以用于wx.openLocation的经纬度，
+    // 获取位置信息
+    wx.getLocation({ 
+      type: 'wgs84', 
       success: function (res) {
-        wx.openLocation({ //​使用微信内置地图查看位置。
-          latitude: event.currentTarget.dataset.marker.latitude, //要去的纬度-地址
-          longitude: event.currentTarget.dataset.marker.longitude, //要去的经度-地址
-          name: event.currentTarget.dataset.marker.name,
-          address: event.currentTarget.dataset.marker.address
+        // 使用微信内置的函数调用展示位置信息
+        wx.openLocation({ 
+          latitude: event.currentTarget.dataset.marker.latitude, // 纬度
+          longitude: event.currentTarget.dataset.marker.longitude, // 经度
+          name: event.currentTarget.dataset.marker.name, // 店名
+          address: event.currentTarget.dataset.marker.address // 地址
         })
       },
+      // 考虑调用失败打印错误信息
       fail: res => {
         console.log('授权失败', res)
         wx.showModal({

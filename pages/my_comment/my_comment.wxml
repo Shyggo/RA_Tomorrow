@@ -1,0 +1,28 @@
+<!-- 使用内置调用时间的filter工具 -->
+<wxs src="../../utils/filter.wxs" module="filters" />
+<view class="navigation_bar">
+	<lable wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique"
+		bindtap="navbarTap">
+		<text>{{item}}</text>
+	</lable>
+</view>
+<view wx:if="{{list.length>0}}">
+	<view class='cont_count' wx:for="{{list}}" wx:key="key">
+		<view class="cutoff_line">
+			<view class="respective_comment">
+				<image class='head_space' src='{{item.avatarUrl}}' />
+				<view class="comment_space">
+				    <!-- 此处调用并展示时间 -->
+					<text class='comment_content'>{{item._createTime?filters.formatDate(item._createTime):''}}</text>
+					<text class='comment_content' style="font-size: 12px;">订单号：{{item.orderId}}</text>
+					<text class='comment_content'>{{item.name}}评论：{{item.content}}</text>
+				</view>
+			</view>
+			<!-- <view class='content'>{{item.content}}</view> -->
+		</view>
+	</view>
+</view>
+<!-- 否则 -->
+<view wx:else class='null_info'>
+	<label class='none_tab'>暂无评论数据</label>
+</view>

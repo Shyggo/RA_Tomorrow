@@ -1,0 +1,26 @@
+<view wx:if="{{tablelist&&tablelist.length>0}}">
+	<view class="plate_title">
+		桌子状态
+        <text class="work_done" bindtap="jumpAdminPage">完成</text>
+        
+	</view>
+    <view class="plate_title">
+        <text class="work_done" bindtap="cleanFirstTable">清理1号桌</text>
+        <text class="work_done" bindtap="cleanSecondTable">清理2号桌</text>
+        <text class="work_done" bindtap="cleanThirdTable">清理3号桌</text>
+	</view>
+	<block wx:for="{{tablelist}}">
+		<view class="table_info">
+			<view class="alignment">
+				<view class="table_num" >{{item.name}}</view>
+				<view class="table_condition">状态：{{item.status}}</view>
+				<block wx:if="{{item.status.length>3}}">
+				<image src="/image/deskuse.png"></image>
+				</block>
+				<block wx:else="">
+				<image src="/image/desk.png"></image>
+				</block>
+			</view>
+		</view>
+	</block>
+</view>

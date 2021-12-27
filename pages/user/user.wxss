@@ -1,0 +1,79 @@
+page {
+  background: #ee3c06;
+}
+
+.user_info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 15px;
+  align-items: center;
+  background: #ee3c06;
+
+}
+/*  用户未登录的显示 */
+.login_label {
+  padding: 8%;
+  background: white;
+}
+.standby {
+  color: yellow;
+  padding: 20rpx;
+}
+.logout_label {
+  color: gray;
+  padding: 20rpx;
+}
+
+.user_head {
+  border-radius: 158rpx;
+  width: 158rpx;
+  height: 158rpx;
+  margin-block-start: 10px;
+
+}
+
+.user_wechatname {
+  margin-top: 20rpx;
+  font-size: 42rpx;
+}
+
+
+.button {
+  width: 100%;
+  background: white;
+  border: none;
+  text-align: left;
+  padding: 0px;
+  margin: 0px;
+  line-height: 1.3;
+  font-size: 16px
+}
+/*  去掉边框的方法 */
+.button::after {
+  border: none;
+  border-radius: 0;
+}
+
+.function_space {
+  height: 90px;
+  width: 100%;
+  display: flex;
+  color: #666;
+  flex-direction: row;
+  font-size: 11px;
+  justify-content: space-around;
+}
+
+.function_name {
+  display: flex;
+  width: 60px;
+  text-align: center;
+  flex-direction: column;
+}
+/*  每个功能对应图标 */
+.function_pattern {
+  width: 50px;
+  height: 50px;
+  padding: 15px 12px 0 6px;
+}

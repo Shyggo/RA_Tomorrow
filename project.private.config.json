@@ -15,7 +15,7 @@
         {
           "id": 1,
           "name": "我的订单",
-          "pathName": "pages/myOrder/myOrder",
+          "pathName": "pages/my_order/my_order",
           "query": "",
           "scene": null
         },
@@ -28,78 +28,72 @@
         {
           "id": 3,
           "name": "我的评价",
-          "pathName": "pages/mycomment/mycomment",
+          "pathName": "pages/my_comment/my_comment",
           "query": "",
           "scene": null
         },
         {
-          "name": "pages/food/food",
-          "pathName": "pages/food/food",
+          "name": "pages/menu_browse/menu_browse",
+          "pathName": "pages/menu_browse/menu_browse",
           "query": "tableNum=1",
           "scene": null
         },
         {
-          "name": "pages/pay/pay",
-          "pathName": "pages/pay/pay",
+          "name": "pages/take_away/take_away",
+          "pathName": "pages/take_away/take_away",
           "query": "",
           "scene": null
         },
         {
           "id": 5,
-          "name": "pages/admin/admin",
-          "pathName": "pages/admin/admin",
+          "name": "pages/stuff/stuff",
+          "pathName": "pages/stuff/stuff",
+          "query": "",
+          "scene": null
+        },
+       
+        {
+          "id": -1,
+          "name": "pages/my_comment/my_comment",
+          "pathName": "pages/my_comment/my_comment",
           "query": "",
           "scene": null
         },
         {
           "id": -1,
-          "name": "pages/change/change",
-          "pathName": "pages/change/change",
+          "name": "pages/user/user",
+          "pathName": "pages/user/user",
           "query": "",
           "scene": null
         },
         {
           "id": -1,
-          "name": "pages/mycomment/mycomment",
-          "pathName": "pages/mycomment/mycomment",
+          "name": "pages/queue_up/queue_up",
+          "pathName": "pages/queue_up/queue_up",
           "query": "",
           "scene": null
         },
         {
-          "id": -1,
-          "name": "pages/me/me",
-          "pathName": "pages/me/me",
+          "name": "pages/admin_kitchen/admin_kitchen",
+          "pathName": "pages/admin_kitchen/admin_kitchen",
           "query": "",
           "scene": null
         },
         {
-          "id": -1,
-          "name": "pages/paihao/paihao",
-          "pathName": "pages/paihao/paihao",
+          "name": "pages/admin_queue_up/admin_queue_up",
+          "pathName": "pages/admin_queue_up/admin_queue_up",
           "query": "",
           "scene": null
         },
         {
-          "name": "pages/adminHouchu/adminHouchu",
-          "pathName": "pages/adminHouchu/adminHouchu",
+          "name": "pages/hall_food/hall_food",
+          "pathName": "pages/hall_food/hall_food",
           "query": "",
           "scene": null
         },
         {
-          "name": "pages/adminPaihao/adminPaihao",
-          "pathName": "pages/adminPaihao/adminPaihao",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/food2/food2",
-          "pathName": "pages/food2/food2",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/cart/cart",
-          "pathName": "pages/cart/cart",
+          "name": "pages/shopping_cart/shopping_cart",
+          "pathName": "pages/shopping_cart/shopping_cart",
           "query": "",
           "scene": null
         }

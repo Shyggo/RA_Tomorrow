@@ -31,21 +31,20 @@
             "disablePlugins": [],
             "outputPath": ""
         },
-        "enableEngineNative": false,
         "useIsolateContext": true,
         "userConfirmedBundleSwitch": false,
         "packNpmManually": false,
         "packNpmRelationList": [],
         "minifyWXSS": true,
         "disableUseStrict": false,
+        "minifyWXML": true,
         "showES6CompileOption": false,
-        "useCompilerPlugins": false,
-        "minifyWXML": true
+        "useCompilerPlugins": false
     },
     "compileType": "miniprogram",
-    "libVersion": "2.20.0",
+    "libVersion": "2.21.0",
     "appid": "wx570c9793b705d3b2",
-    "projectname": "Restauran_Tomorrow",
+    "projectname": "Restauran_Tomorrowfinal",
     "debugOptions": {
         "hidedInDevtools": []
     },
@@ -68,92 +67,85 @@
                 {
                     "id": 1,
                     "name": "我的订单",
-                    "pathName": "pages/myOrder/myOrder",
+                    "pathName": "pages/my_order/my_order",
                     "query": "",
                     "scene": null
                 },
                 {
                     "id": 1,
                     "name": "首页",
-                    "pathName": "pages/index/index",
+                    "pathName": "pages/home_page/home_page",
                     "query": "",
                     "scene": null
                 },
                 {
                     "id": 3,
                     "name": "我的评价",
-                    "pathName": "pages/mycomment/mycomment",
+                    "pathName": "pages/my_comment/my_comment",
                     "query": "",
                     "scene": null
                 },
                 {
-                    "name": "pages/food/food",
-                    "pathName": "pages/food/food",
+                    "name": "pages/take_away/take_away",
+                    "pathName": "pages/take_away/take_away",
                     "query": "tableNum=1",
                     "scene": null
                 },
                 {
-                    "name": "pages/pay/pay",
-                    "pathName": "pages/pay/pay",
+                    "name": "pages/pay_in_canteen/pay_in_canteen",
+                    "pathName": "pages/pay_in_canteen/pay_in_canteen",
                     "query": "",
                     "scene": null
                 },
                 {
                     "id": 5,
-                    "name": "pages/admin/admin",
-                    "pathName": "pages/admin/admin",
+                    "name": "pages/stuff/stuff",
+                    "pathName": "pages/stuff/stuff",
                     "query": "",
                     "scene": null
                 },
                 {
                     "id": -1,
-                    "name": "pages/change/change",
-                    "pathName": "pages/change/change",
+                    "name": "pages/my_comment/my_comment",
+                    "pathName": "pages/my_comment/my_comment",
                     "query": "",
                     "scene": null
                 },
                 {
                     "id": -1,
-                    "name": "pages/mycomment/mycomment",
-                    "pathName": "pages/mycomment/mycomment",
+                    "name": "pages/user/user",
+                    "pathName": "pages/user/user",
                     "query": "",
                     "scene": null
                 },
                 {
                     "id": -1,
-                    "name": "pages/me/me",
-                    "pathName": "pages/me/me",
+                    "name": "pages/queue_up/queue_up",
+                    "pathName": "pages/queue_up/queue_up",
                     "query": "",
                     "scene": null
                 },
                 {
-                    "id": -1,
-                    "name": "pages/paihao/paihao",
-                    "pathName": "pages/paihao/paihao",
+                    "name": "pages/admin_kitchen/admin_kitchen",
+                    "pathName": "pages/admin_kitchen/admin_kitchen",
                     "query": "",
                     "scene": null
                 },
                 {
-                    "name": "pages/adminHouchu/adminHouchu",
-                    "pathName": "pages/adminHouchu/adminHouchu",
+                    "name": "pages/admin_queue_up/admin_queue_up",
+                    "pathName": "pages/admin_queue_up/admin_queue_up",
                     "query": "",
                     "scene": null
                 },
                 {
-                    "name": "pages/adminPaihao/adminPaihao",
-                    "pathName": "pages/adminPaihao/adminPaihao",
+                    "name": "pages/hall_food/hall_food",
+                    "pathName": "pages/hall_food/hall_food",
                     "query": "",
                     "scene": null
                 },
                 {
-                    "name": "pages/food2/food2",
-                    "pathName": "pages/food2/food2",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "pages/pay2/pay2",
-                    "pathName": "pages/pay2/pay2",
+                    "name": "pages/pay_in_canteen/pay_in_canteen",
+                    "pathName": "pages/pay_in_canteen/pay_in_canteen",
                     "query": "",
                     "scene": null
                 }

@@ -1,0 +1,64 @@
+<!-- 调用内置的时间格式化展示 -->
+<wxs src="../../utils/filter.wxs" module="filters" />
+<!--导航条-->
+<view class="navigation_bar">
+	<lable wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique"
+		bindtap="navbarTap">
+		<text>{{item}}</text>
+	</lable>
+</view>
+<view wx:if="{{list.length>0}}">
+	<!-- 外层 -->
+	<view class='text_background' wx:for="{{list}}" wx:key="key">
+		<!-- 编号 -->
+		<view class='order_detail'>订单编号:{{item._id}} </view>
+		<view class='order_detail'>地址:{{item.address}}</view>
+		<view class='order_detail'>下单时间:{{item._createTime?filters.formatDate(item._createTime):''}}</view>
+		<view class="dish_space">
+			<!-- 列表 -->
+			<view class='order_allDish'>
+				<block wx:for="{{item.orderList}}" wx:for-item="arr_item" wx:key="key">
+					<view class="dish_and_num">
+						<text>{{arr_item.name}} X{{arr_item.quantity}}</text>
+						<text class="dish_countedPrice"> ￥{{arr_item.price}}</text>
+					</view>
+				</block>
+				<view class='total_price'>总价:{{item.totalPrice}}元</view>
+			</view>
+			<!-- //-1订单取消,0新下单待上餐,1待用户评价,2订单已完成 -->
+		</view>
+		<view wx:if="{{item.status!=-1}}" class='coent_list'>
+				<label wx:if="{{item.status==0}}" class='order_operator' data-item='{{item}}' bindtap='cancelOrder' style="color: #ee3c06;">取消订单</label>
+				<label wx:if="{{item.status==1}}" class='order_operator' data-orderid='{{item._id}}'
+					bindtap='showComment' style="color: #ee3c06;">去评价</label>
+				<label wx:if="{{item.status==2}}" class='order_operator' bindtap='jumpCommentPage' style="color: #ee3c06;">查看评价</label>
+		</view>
+	</view>
+</view>
+<!-- 否则 -->
+<view wx:else style="margin-top:16rpx;text-align: center;">
+	<label class='none_tab'>暂无数据，请相关操作后查看</label>
+</view>
+
+<!-- 评论弹框 -->
+<view class='comment_popup_window' hidden='{{!isShowComment}}'>
+	<view class='comment_space'></view>
+	<view class='function_name_space'>
+		<view class='function_name'>
+			<text>评论店家</text>
+		</view>
+		<view class='text_space'>
+			<view class='user_input'>
+				<textarea class='input_signal' placeholder='请输入您的评论内容' bindinput='setValue'></textarea>
+			</view>
+		</view>
+		<view class='choice_button'>
+			<view class='cancel_button' bindtap='hideComment'>
+				<button>取消</button>
+			</view>
+			<view class='confirm_button' bindtap='submitComment'>
+				<button>确定</button>
+			</view>
+		</view>
+	</view>
+</view>

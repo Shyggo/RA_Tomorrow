@@ -1,0 +1,428 @@
+page {
+  background: #ee3c06;
+  height: 100%;
+}
+
+swiper {
+  height: 380rpx;
+}
+
+.scrollx{
+  width: 100%;
+  height: 68rpx;
+  line-height: 68rpx;
+  white-space: nowrap;
+  font-size: 14px;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.scroll-animation{
+  position: absolute;
+  top:0px;
+  width: 100%;
+  font-size: 32rpx;
+  color: white;
+  animation: scrollItps 8s linear  infinite ;
+}
+
+@keyframes scrollItps{
+  0%   { left:100%;}
+  100% { left:-180%; }
+}
+
+.oorder {
+  /* 上次点餐 */
+  overflow: auto;
+  width: 100%;
+  height: 48rpx;
+  box-sizing: border-box;
+  float:inline-start;
+  border-left:0ch;
+  border-right:0ch;
+  background: white;
+}
+.orderbutton {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: 68rpx;
+  margin-left: 0rpx;
+  margin-right: 0rpx;
+  background-color: #1AD378;
+  color: #FFFFFF;
+  margin-top: 30rpx;
+  font-size: 30rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  line-height: 88rpx
+}
+.ordertext {
+  font-weight: bold;
+  font-size: 30rpx;
+  width: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  word-wrap: break-word;
+  word-break: break-all;
+  display: flex;
+  color:#ee3c06;
+  background-color: white;
+  border: 3rpx solid #E0E3DA;
+  box-shadow:5rpx 5rpx 5rpx 5rpx #E0E3DA;
+}
+.order_title {
+  font-weight: 400;
+  font-size: 30rpx;
+  width: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  word-wrap: break-word;
+  word-break: break-all;
+  display: flex;
+  color: #ee3c06;
+}
+.order_price {
+  font-weight: bold;
+  font-size: 30rpx;
+  color: #ee3c06;
+  display: flex;
+  
+}
+
+/*人民币符号*/
+
+.order_price:before {
+  content: "￥";
+  font-size: 14px;
+  display: flex;
+  margin:0 auto;
+}
+.ordervalue {
+  font-size: 30rpx;
+  margin: 0 20rpx;
+  font-weight: bold;
+  display: flex;
+  margin:0 auto;
+
+}
+/* 分类相关样式 */
+.dish_space {
+  width: 100%;
+  height: 100%;
+}
+
+.navigation_bar {
+  /* 左侧栏目 */
+  overflow: auto;
+  width: 25%;
+  height: 100vh;
+  float: left;
+  box-sizing: border-box;
+  height: 100vh;
+  /* background: white; */
+}
+
+
+
+.choice_button {
+  height: 80rpx;
+  line-height: 80rpx;
+  /* background: #fff; */
+  text-align: center;
+  position: relative;
+}
+
+/* 被选中 */
+.chosen {
+  color: #ee3c06;
+  background-color: white;
+}
+
+
+/* 右侧栏目 */
+.dish_detail {
+  height: 100vh;
+  width: 75%;
+  float: right;
+  /* padding: 0 2%; */
+  overflow: auto;
+  box-sizing: border-box;
+  padding-bottom: 90rpx;
+}
+
+.dish_detail .title {
+  font-size: 30rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  color: gray;
+  /* background-color: wheat; */
+  background-color: white;
+}
+
+
+/*菜品列表  */
+.respective_dish {
+  display: flex;
+  align-items: center;
+  padding: 10rpx 0rpx;
+  background-color: #ffffff
+}
+
+.dish_img {
+  width: 140rpx;
+  height: 140rpx;
+  line-height: 140rpx;
+  text-align: center;
+  margin-left: 10rpx;
+  margin-right: 30rpx;
+}
+
+.dish_innerspace {
+  flex: 1;
+  min-width: 0
+}
+
+.dish_name {
+  font-weight: 400;
+  font-size: 40rpx;
+  width: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.dish_sold {
+  font-size: 33rpx;
+  color: gray;
+}
+
+/*加减器*/
+
+.num_changer {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 10rpx;
+}
+
+/*价格与数量加减器*/
+
+.add_or_minus {
+  padding-right: 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/*价格*/
+
+.dish_price {
+  font-weight: bold;
+  font-size: 32rpx;
+  color: #ee3c06;
+}
+
+/*人民币符号*/
+
+.dish_price:before {
+  content: "￥";
+  font-size: 14px;
+}
+
+
+
+.num_changer_button {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+
+
+/*数量*/
+
+.number {
+  font-size: 28rpx;
+  margin: 0 20rpx;
+  font-weight: bold;
+}
+
+/* 统计信息  */
+
+.statistics_space {
+  width: 100%;
+  height: 80rpx;
+  position: fixed;
+  left: 0;
+  bottom: 0px;
+  z-index: 100;
+  background-color: #fef4d1;
+}
+
+.cart_space {
+  width: 110rpx;
+  height: 110rpx;
+  background-color: #ee3c06;
+  border-radius: 50%;
+  position: absolute;
+  top: -50rpx;
+  left: 40rpx;
+}
+
+.cart_pattern {
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  top: 24rpx;
+  left: 24rpx;
+}
+
+.total_count {
+  position: absolute;
+  width: 50%;
+  height: 80rpx;
+  top: 0;
+  left: 25%;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 32rpx;
+  background-color: red;
+}
+
+.decide_choice {
+  position: absolute;
+  width: 25%;
+  height: 80rpx;
+  top: 0;
+  right: 0;
+  line-height: 80rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 40rpx;
+  background-color: #ee3c06;
+}
+
+.fontP {
+  color: #ff9600;
+  font-size: 40rpx;
+}
+
+/* 遮罩弹窗  */
+
+.popup_mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  background: #000;
+  z-index: 666;
+}
+
+/* 购物车弹窗  */
+
+.cart_popup {
+  width: 100%;
+  height: 285px;
+  background: #fff;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  bottom: -285px;
+  overflow: auto;
+}
+
+.cart_title {
+  width: 100%;
+  height: 70rpx;
+  line-height: 80rpx;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  background-color: #ee3c06;
+  color: #fff;
+}
+
+/* 关闭按钮  */
+
+.cart_close {
+  position: absolute;
+  left: 30rpx;
+  font-size: 28rpx;
+}
+
+/* 清空购物车  */
+
+.cart_deleteAll {
+  position: absolute;
+  right: 30rpx;
+  font-size: 28rpx;
+}
+
+.margin_r {
+  margin-right: 30rpx;
+}
+
+/* 菜品信息列表 */
+
+.dish_dinfo {
+  width: 100%;
+  height: 98rpx;
+  position: relative;
+  border-bottom: 1px #dedede solid;
+}
+
+.dish_dname {
+  width: 40%;
+  height: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 14px;
+  margin-left: 40rpx;
+  padding-top: 10rpx;
+}
+
+.dish_dprice {
+  width: 60%;
+  height: 50%;
+  position: absolute;
+  top: 50rpx;
+  left: 0;
+  margin-left: 40rpx;
+  font-size: 14px;
+  padding-bottom: 10rpx;
+  color: #ff9600;
+}
+
+.price-box {
+  padding-right: 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 20%;
+  position: absolute;
+  left: 60%;
+  top: 20rpx;
+}
+
+
+.cart_delete_dish {
+  position: absolute;
+  right: 40rpx;
+  top: 32rpx;
+}
+
+

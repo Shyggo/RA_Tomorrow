@@ -1,0 +1,33 @@
+
+  /* 板块标题 */
+  .plate_title {
+    font-size: 45rpx;
+    color: #ee3c06;
+    display: flex;
+    justify-content: space-between;
+    margin: 35rpx 5rpx 15rpx 30rpx;
+  }
+  /* 清理与完成 */
+  .work_done {
+    font-size: 36rpx;
+    padding: 10rpx 30rpx;
+  }
+  
+  .table_info {
+    /* 桌子信息板块  */
+    display: flex;
+    margin: 5rpx 40rpx;
+    border-bottom: 1px rgb(220, 220, 220) solid;
+  }
+
+  .table_num {
+    font-size: 38rpx;
+    width: 500rpx;
+    white-space:nowrap; 
+      text-overflow:ellipsis;
+      overflow: hidden;
+  }
+  .table_condition {
+    font-size: 30rpx;
+    color: gray;
+  }

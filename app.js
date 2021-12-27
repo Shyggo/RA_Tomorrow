@@ -1,26 +1,21 @@
-//app.js
+// 全局js渲染的实现
 App({
-  //创建towxml对象，供小程序页面使用
-  globalData: {
-    //1-src替换成你自己的
-    mp3Src: 'cloud://cloud1-2g66ihwn498306a8.636c-cloud1-2g66ihwn498306a8-1308085111/MP3/laidanle.wav',
-    //要设置的地方
-    isNeedSaoMa: true, //是否需要扫码点餐： true需要，false不需要
-    address: '', //isNeedSaoMa为true时是桌号，false时店内随意下单
-    isNeedFenLei: true, //是否需要分类，true需要：适合菜品多的时候，false不需要：适合菜品少的时候
+  globalData: { // 创建一个小程序页面所需要的对象，方便操作
+    mp3Src: 'cloud://cloud1-2g66ihwn498306a8.636c-cloud1-2g66ihwn498306a8-1308085111/MP3/laidanle.wav', // 编入一个下单音乐
+    isNeedSaoMa: true,  // 设置一个bool属性isNeedSaoMa，判断当前用户操作功能时是否需要扫码登陆
+    address: '',  // 设置一个address变量来储存地址，扫码点餐时为true可为1，2，3号桌，当打包带走的时候变量值为false，默认为外带
+    isNeedFenLei: true, // 设置一个bool属性isNeedFenLei变量来决定显示菜单的时候是否需要分类，当为true时需要分类，当为false时不需要分类
     userInfo: {},
     openid: null,
   },
   onLaunch: function () {
-    //云开发初始化
-    wx.cloud.init({
-      env: 'cloud1-2g66ihwn498306a8', //2-src替换成你自己的云开发环境id
+    wx.cloud.init({  // 初始化一个云开发环境，保存自己的云函数和云数据库
+      env: 'cloud1-2g66ihwn498306a8', 
       traceUser: true,
     })
     this.getOpenid();
   },
-  // 获取用户openid
-  getOpenid: function () {
+  getOpenid: function () { // 设置一个函数获取用户的openid
     var app = this;
     var openidStor = wx.getStorageSync('openid');
     if (openidStor) {
@@ -43,8 +38,8 @@ App({
       })
     }
   },
-  //获取自己后台的user信息
-  _getMyUserInfo() {
+
+  _getMyUserInfo() { // 设置一个函数用来获取自身后台的账户信息
     let app = this
     var userStor = wx.getStorageSync('user');
     if (userStor) {
@@ -64,13 +59,12 @@ App({
           app.globalData.userInfo.realzhuohao = res.data.data.zhuohao;
           app.globalData.userInfo.realrenshu = res.data.data.renshu;
           console.log("===app.globalData===", app.globalData.userInfo)
-          //缓存到sd卡里
           app._saveUserInfo(app.globalData.userInfo);
         }
       }
     })
   },
-  _checkOpenid() {
+  _checkOpenid() { // 设置一个函数检查自己的openid
     let app = this
     let openid = this.globalData.openid;
     if (!openid) {
@@ -83,19 +77,17 @@ App({
       return openid;
     }
   },
-  // 保存userinfo
-  _saveUserInfo: function (user) {
+  _saveUserInfo: function (user) { // 设置一个函数来保存自己的账户信息
     this.globalData.userInfo = user;
     wx.setStorageSync('user', user)
   },
 
-  //获取今天是本月第几周
-  _getWeek: function () {
-    // 将字符串转为标准时间格式
-    let date = new Date();
+
+  _getWeek: function () { // 设置一个函数来获取当前的时间
+    let date = new Date(); // 将获得的时间转换为字符串的形式
     let month = date.getMonth() + 1;
     let week = this.getWeekFromDate(date);
-    if (week === 0) { //第0周归于上月的最后一周
+    if (week === 0) { 
       month = date.getMonth();
       let dateLast = new Date();
       let dayLast = new Date(dateLast.getFullYear(), dateLast.getMonth(), 0).getDate();
@@ -106,17 +98,16 @@ App({
     return time;
   },
 
-  getWeekFromDate: function (date) {
-    // 将字符串转为标准时间格式
-    let w = date.getDay(); //周几
+  getWeekFromDate: function (date) { // 设置一个函数把获得的字符串转换为标准的时间格式
+    let w = date.getDay(); // 得到今天是周几的信息
     if (w === 0) {
       w = 7;
     }
     let week = Math.ceil((date.getDate() + 6 - w) / 7) - 1;
     return week;
   },
-  // 获取当前时间
-  _getCurrentTime() {
+
+  _getCurrentTime() { // 设置一个函数获取当前的系统时间
     var d = new Date();
     var month = d.getMonth() + 1;
     var date = d.getDate();
@@ -146,11 +137,10 @@ App({
       curDateTime = curDateTime + minutes + "分";
     return curDateTime;
   },
-  // 获取当前的年月日
-  _getNianYuiRi() {
+
+  _getNianYuiRi() { // 设置一个函数获取当前的系统的年月日
     let date = new Date()
     let year = date.getFullYear()
-    // 我们的月份是从0开始的 0代表1月份，11代表12月
     let month = date.getMonth() + 1
     let day = date.getDate()
     let key = '' + year + month + day

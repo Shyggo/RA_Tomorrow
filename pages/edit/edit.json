@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "Select": "/component/select/select"
+  },
+  "navigationBarTitleText": "管理员页面"
+}

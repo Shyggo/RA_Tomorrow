@@ -1,0 +1,202 @@
+/* 顶部菜单切换 */
+page {
+  background-color: #ee3c06;
+}
+
+.navigation_bar {
+  display: flex;
+  background: #fff;
+}
+
+.none_tab {
+  position: relative;
+  top: 20rpx;
+  color: #999;
+  font-size: 32rpx;
+}
+
+.navigation_bar .item {
+  /* 默认选中菜单 */
+  position: relative;
+  flex: auto;
+  font-size: 27rpx;
+  width: 100rpx;
+  text-align: center;
+  line-height: 80rpx;
+  color: #333;
+  border-bottom: 6rpx solid #ddd;
+}
+
+
+
+.navigation_bar .item.active {
+  /* 选中菜单样式 */
+  color: #333;
+  border-bottom: 6rpx solid #ee3c06;
+}
+
+
+
+.navigation_bar .item.active:after {
+  /* 字体 */
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4rpx;
+}
+
+/* 全部 */
+
+.text_background {
+  background-color: white;
+  margin-top: 6rpx;
+  width: 100%;
+  margin-bottom: 6rpx;
+}
+
+.order_detail {
+  /* 顶单编号 */
+  padding: 10rpx 20rpx;
+  font-size: 28rpx;
+  border-bottom: 1rpx solid #ee3c06;
+}
+.total_price {
+  /* 顶单编号 */
+  padding: 10rpx 50rpx;
+  font-size: 30rpx;
+  border-bottom: 1rpx solid #ee3c06;
+}
+
+/* 内容区域 */
+.dish_space {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  justify-items: center;
+  align-items: center;
+}
+
+.order_allDish {
+  /* 订单明细 */
+  display: flex;
+  flex-direction: column;
+  flex: 5;
+}
+
+
+.dish_and_num {
+  margin-left: 30rpx;
+  padding: 20rpx;
+
+  border-bottom: 1px solid #ee3c06;
+  font-size: 28rpx;
+}
+
+.dish_countedPrice {
+  margin-left: 20rpx;
+  color: #ee3c06;
+}
+
+
+.order_operator {
+  flex: 2;
+  color: darkgoldenrod;
+  margin: 30rpx;
+  width: 180rpx;
+  height: 56rpx;
+  text-align: center;
+  border: 1rpx solid #ee3c06;
+  font-size: 30rpx;
+  display: inline-block;
+  line-height: 56rpx;
+}
+
+/* 评论弹窗 */
+
+.comment_popup_window {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+}
+
+.comment_space {
+  opacity: 0.4;
+  background-color: black;
+  position: absolute;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.function_name_space {
+  position: absolute;
+  opacity: 1;
+  width: 70%;
+  margin-left: 15%;
+  margin-top: 40%;
+}
+
+.function_name {
+  padding-left: 5%;
+  background-color: #ee3c06;
+  color: white;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  border-top-right-radius: 16rpx;
+  border-top-left-radius: 16rpx;
+}
+
+.text_space {
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  background-color: white;
+  text-align: center;
+}
+
+.user_input {
+  margin-left: 5%;
+  margin-right: 5%;
+  border: 1px solid #ddd;
+  padding-left: 2vh;
+  padding-right: 2vh;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+
+.input_signal {
+  height: 80px;
+  width: 100%;
+}
+
+.choice_button {
+  display: flex;
+}
+
+.cancel_button {
+  width: 50%;
+}
+
+.confirm_button {
+  width: 50%;
+}
+
+.cancel_button button {
+  width: 100%;
+  background-color: white;
+  color: gray;
+  border-radius: 0px;
+  border-bottom-left-radius: 16rpx;
+}
+
+.confirm_button button {
+  width: 100%;
+  background-color: white;
+  color: black;
+  border-radius: 0px;
+  border-bottom-right-radius: 16rpx;
+}

@@ -1,0 +1,73 @@
+<!-- 顶部欢迎信息 -->
+<view class='rolling_bar'>
+    <view class="rolling_bar_text">Tomorrow_Restaurant餐厅欢迎您使用本小程序下单，希望我们的服务能让您满意</view>
+</view>
+
+<!-- 菜品大图轮播 -->
+<view>
+	<swiper indicator-dots="{{true}}" indicator-color="#f4c903" autoplay="true" circular="true">
+		<block wx:for="{{banner}}" wx:key="banner">
+			<swiper-item bindtap="jump_orderPage">
+				<image src='{{item.picUrl}}' mode="scaleToFill" style="width:100%;height:100%;" />
+			</swiper-item>
+		</block>
+	</swiper>
+</view>
+
+<!-- 会员按钮 -->
+<button type="primary" bindtap="get_userInfo" style="background-color: #ee3c06;">加入会员，享受会员尊享</button>
+<button type="primary" bindtap="goToStandby" style="background-color: rgb(255, 0, 119);">获取你的替身使者,立享九折优惠</button>
+<!-- 推荐菜部分 -->
+<view class="recommand_title">
+		掌柜力荐🐂
+</view>
+<scroll-view scroll-x="true" scroll-into-view="{{toView}}" scroll-left="{{scrollTop}}">
+  <view class="rolling_level">
+	<block wx:for="{{goodList}}" wx:key="index">
+		<view class="dish_space" bindtap="jump_orderPage">
+			<image class="dish_img" src="{{item.icon}}" />
+			<view class="dish_innerspace">
+				<view class="dish_name" data-index="{{index}}">{{item.name}}</view>
+				<view class="dish_sold">销量：{{item.sell}} </view>
+				<view class="dish_price" data-index="{{index}}">{{item.price}}</view>
+			</view>
+		</view>
+	</block>
+  </view>
+</scroll-view>
+<view class="search_space">
+	<image class="search_pattern" bindtap="jump_searchResult" src="/image/sousuo.png"></image>
+	<input class="user_input" bindconfirm='jump_searchResult' confirm-type='search' bindinput="user_input" placeholder="没有喜欢的？那就来找找吧！" />
+	
+</view>
+
+<!-- 首页功能 -->
+<view class="function_space">
+	<view bindtap='code_scanner' class="respective_func">
+		<image class="function_image" src="/image/home1.png" />
+		<text>{{isNeedSaoMa?'扫码点餐':'去点餐'}}</text>
+	</view>
+	<view bindtap='jump_orderPage' class="respective_func">
+		<image class="function_image" src="/image/home2.png" />
+		<text>菜单浏览</text>
+	</view>
+</view>
+<view class="function_space">
+	<view bindtap='jump_queue' class="respective_func">
+		<image class="function_image" src="/image/home3.png" />
+		<text>排号等位</text>
+	</view>
+	<view bindtap='jump_cart' class="respective_func">
+		<image class="function_image" src="/image/tab2.png" />
+		<text>购物车</text>
+	</view>
+</view>
+<view class="function_space">
+	
+	<view bindtap='show_resAddress' class="respective_func">
+		<image class="function_image" src="/image/home4.png" />
+		<text>饭店信息</text>
+	</view>
+</view>
+
+

@@ -1,0 +1,160 @@
+.background_space {
+  color: #ee3c06;
+}
+
+.cutoff_line {
+  width: 100%;
+  height: 10rpx;
+  background: #d9d9d9;
+}
+
+/* 订单明细 */
+.title_text {
+  padding: 14rpx 15rpx 10rpx;
+  font-size: 40rpx;
+  border-bottom: 2px solid gainsboro;
+}
+
+.order_space {
+  margin-left: 30rpx;
+  padding: 20rpx;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid gainsboro;
+  font-size: 36rpx;
+}
+
+/* 总价 */
+.total_price {
+  color: #ee3c06;
+  text-align: right;
+  font-size: 45rpx;
+  padding: 10rpx 30rpx;
+}
+
+/* 输入框样式 */
+input {
+  padding: 20rpx;
+  border-bottom: 1px solid gainsboro;
+}
+
+/*选用餐人数按钮盒子  */
+.customerChoice_space {
+  padding: 20rpx 40rpx;
+}
+
+.upon_space {
+  display: flex
+}
+
+.below_space {
+  display: flex;
+  margin-top: 20rpx;
+}
+
+/*选用餐人数按钮  */
+.customer_num {
+  width: 80rpx;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  margin: 0 auto;
+  background: #ee3c06;
+  border-radius: 40rpx;
+  font-weight: bold;
+}
+
+
+/*弹窗遮罩层  */
+
+.popup_mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  background: #000;
+  z-index: 666;
+}
+
+/*选择支付方式弹窗  */
+.payWay_window {
+  width: 100%;
+  height: 285px;
+  background: #fff;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  bottom: -285px;
+  overflow: auto;
+}
+
+.pay_text {
+  width: 100%;
+  height: 75rpx;
+  line-height: 80rpx;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  background-color: #ee3c06;
+  color: #fff;
+}
+
+/*返回按钮  */
+.return_button {
+  position: absolute;
+  right: 30rpx;
+  font-size: 28rpx;
+}
+
+
+/*模拟支付  */
+
+.pay_choice_space {
+  width: 100%;
+  height: 98rpx;
+  position: relative;
+  border-bottom: 1px #dedede solid;
+}
+
+.pay_choice_text {
+  padding-left: 20rpx;
+  width: 50%;
+  position: absolute;
+  left: 0;
+  top: 20rpx;
+}
+
+.price_info {
+  width: 40%;
+  font-size: 32rpx;
+  position: absolute;
+  left: 60%;
+  top: 20rpx;
+  color: #ee3c06;
+}
+
+/*提交订单按钮 */
+.order_submit_button {
+  width: 100%;
+  height: 100rpx;
+  position: fixed;
+  left: 0;
+  bottom: 0rpx;
+  z-index: 100;
+  background-color: #fff;
+}
+
+/*总计金额、件数  */
+.total_price {
+  width: 90%;
+  margin: 0 auto;
+  height: 84rpx;
+  line-height: 84rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 32rpx;
+  background-color: #09ba07;
+  border-radius: 20rpx;
+}

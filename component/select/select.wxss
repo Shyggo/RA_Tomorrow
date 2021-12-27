@@ -1,0 +1,58 @@
+/* component/select/select.wxss */
+.com-selectBox{
+  width: 80%;
+  padding: 0px 10%;
+}
+.com-sContent{
+  border: 2px solid #ffffff;
+  padding: 0px 0px 0px 5%;
+  font-size: 16px;
+  position: relative;
+  height: 50px;
+  line-height: 30px;
+  border-radius: 99rpx;
+}
+.com-sImg{
+  position: absolute;
+  right: 5%;
+  top: 27%;
+  width: 8%;
+  height: 46%;
+  transition: all .3s ease;
+}
+.com-sTxt{
+  color:#ffffff;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  
+}
+.com-sList{
+  background: white;
+  
+  width: 75%;
+  position: absolute;
+  border: 1px solid #e2e2e2;
+  border-top: none;
+  box-sizing: border-box;
+  z-index: 3;
+  max-height: 120px;
+  overflow: auto;
+}
+.com-sItem{
+  height: 30px;
+  line-height: 30px;
+  border-top: 1px solid #e2e2e2;
+  padding: 0 6px;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+}
+.com-sItem:first-child{
+  border-top: none;
+}

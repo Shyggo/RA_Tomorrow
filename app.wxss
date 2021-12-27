@@ -1,5 +1,5 @@
 page {
-  --themeColor: #f4c903
+  --themeColor: #ee3c06
 }
 .container {
   display: flex;
@@ -39,5 +39,5 @@ page {
 
 .line_1px {
   height: 1px;
-  background: gainsboro
+  background: rgb(235, 71, 7)
 }

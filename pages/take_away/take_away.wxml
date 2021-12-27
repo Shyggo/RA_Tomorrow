@@ -1,0 +1,66 @@
+<!-- 点餐明细 -->
+<view class="title_text">订单明细</view>
+<block wx:for="{{cartList}}" wx:key="index">
+	<view class="order_space">
+		<image class="dish_img" src="{{item.icon}}" style="width: 20%; height: 40px;" />
+		<text>{{item.name}} X {{item.quantity}}</text>
+		<text class="background_space">￥{{item.price}}</text>
+	</view>
+</block>
+<!-- 账单信息文字统计 -->
+<view class="total_price">合计：<span>{{totalPrice}}元，{{totalNum}}份</span></view>
+<view class="cutoff_line"></view>
+<!-- 地址，这里也使用了标题标签 -->
+<view class="title_text">地址：外带</view>
+<input bindinput="get_user_remark" placeholder="请输入备注" value="{{remarks}}" />
+
+
+<!--就餐信息，输入或选择 -->
+<input focus placeholder="请输入餐具数量" type="number" bindinput="get_userInput" value="{{diner_num}}" />
+<view class="customerChoice_space">
+	<view class="upon_space">
+		<view class="customer_num" data-num="1" bindtap="get_customer_num">
+		1</view>
+		<view class="customer_num" data-num="2" bindtap="get_customer_num">
+		2</view>
+		<view class="customer_num" data-num="3" bindtap="get_customer_num">
+		3</view>
+		<view class="customer_num" data-num="4" bindtap="get_customer_num">
+		4</view>
+		<view class="customer_num" data-num="5" bindtap="get_customer_num">
+		5</view>
+	</view>
+	<view class="below_space">
+		<view class="customer_num" data-num="6" bindtap="get_customer_num">
+		6</view>
+		<view class="customer_num" data-num="7" bindtap="get_customer_num">
+		7</view>
+		<view class="customer_num" data-num="8" bindtap="get_customer_num">
+		8</view>
+		<view class="customer_num" data-num="9" bindtap="get_customer_num">
+		9</view>
+		<view class="customer_num" data-num="10" bindtap="get_customer_num">
+		10</view>
+	</view>
+</view>
+
+<!-- 备注标签  -->
+
+<view class="order_submit_button">
+	<button class="total_price" type="primary" size="{{primarySize}}" disabled="{{disabled}}" bindtap="openPay">
+		核对无误，请支付</button>
+</view>
+<!-- 弹窗，选择支付方式  -->
+<view hidden="{{maskFlag}}" class="popup_mask" bindtap="closePay"></view>
+<view animation="{{animationData}}" class="payWay_window">
+	<view class="pay_text"><span class="return_button" bindtap="closePay">返回</span>选择您的付款方式</view>
+	<scroll-view scroll-y style="height:250px;margin-top:35px">
+		<block wx:for="{{payWayList}}" wx:key="index">
+			<view class="pay_choice_space" data-id="{{item.id}}" bindtap="updateData">
+				<view class="pay_choice_text" data-id="{{item.id}}">{{item.package}}</view>
+				<view class="price_info" data-id="{{item.id}}" wx:if="{{item.id==1}}">点此处支付{{totalPrice-5}}元 </view>
+				<view class="price_info" data-id="{{item.id}}" wx:else="">点此处支付{{totalPrice}}元 </view>
+			</view>
+		</block>
+	</scroll-view>
+</view>

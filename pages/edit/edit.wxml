@@ -1,0 +1,18 @@
+<view class="title">修改信息</view>
+<view wx:if="{{!isAdmin}}" class="outer_border">
+	<view class='respective_info'>
+		<input placeholder-class="phcolor" class="input_border" placeholder='请输入要修改的账号' bindinput="inputAccount" value="{{phone}}" maxlength='10' />
+	</view>
+	<view class='respective_info'>
+		<input placeholder-class="phcolor" class="input_border" placeholder='请输入要修改的账号的密码' bindinput="inputPassWord" value="{{phone}}" maxlength='10' />
+	</view>
+    <view class='respective_info'>
+		<input placeholder-class="phcolor" class="input_border" placeholder='请输入要修改的薪水' bindinput="inputSalary" value="{{phone}}" maxlength='10' />
+	</view>
+	<view class='respective_info'>
+		<Select prop-array='{{selectArray}}'  bind:myget='getData' ></Select>
+	</view>
+	<!-- 提交按钮 -->
+	<button class='submit_button' bindtap='submitChange' type='primary'>完成</button>
+	<image class='weather-bg'  src='cloud://cloud1-2g66ihwn498306a8.636c-cloud1-2g66ihwn498306a8-1308085111/img/register.jpg'></image>
+</view>

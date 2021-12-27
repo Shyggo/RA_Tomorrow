@@ -1,0 +1,31 @@
+
+<!-- 功能切换 -->
+<view wx:if="{{goodList&&goodList.length>0}}">
+	<view class="modify">
+		<button class="add" bindtap="jumpRegisterPage">
+			<image class="image_add" src="/image/添加用户.png"></image>
+		</button>
+		<button class="mod" bindtap="jumpEditPage">
+			<image class="image_mod" src="/image/修改.png" mode='widthFix'></image>
+		</button>
+	</view>
+
+	<block wx:for="{{peoplelist}}">
+		<view class="employee_info" >
+			<image class="image_1" src="/image/用户.png" />
+			<view class="alignment">
+				<view class="employee_name" >{{item.name}}</view>
+				<view class="position">
+					<text class="pos">职位：</text>
+					<text class="employee_position">{{item.position}}</text>
+				</view>
+				<view class="salary">
+					<text class="sal">薪水：</text>
+					<text class="employee_salary">{{item.salary}}</text>
+				</view>
+			</view>
+		</view>
+	</block>
+
+	<view class="block"></view>
+</view>

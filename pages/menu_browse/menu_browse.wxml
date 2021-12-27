@@ -1,0 +1,72 @@
+<!-- 搜索区域 -->
+<view class="search_space">
+  <input class="input_border" bindconfirm='searchFunc' confirm-type='search' bindinput="getSearchKey"
+    placeholder="搜索菜品" value="{{searchKey}}"></input>
+  <image class="search_pattern" bindtap="searchFunc" src="/image/sousuo.png"></image>
+</view>
+
+<!-- 菜单展示区域  -->
+<scroll-view scroll-y class="dish_space">
+  <block wx:for="{{foodList}}" wx:key="index">
+    <view class="respective_space">
+      <image class="dish_img" src="{{item.icon}}" />
+      <view class="dish_innerspace">
+        <view class="dish_name" data-index="{{index}}">{{item.name}}</view>
+        <view class="dish_sold">销量：{{item.sell}} </view>
+        <view class="add_or_minus">
+          <view class="dish_price" data-index="{{index}}">{{item.price}}</view>
+          <view class="num_changer">
+            <view bindtap="minusDishNum" data-item="{{item}}">
+              <image class="num_changer_image" src="/image/jian.png" />
+            </view>
+            <view class="number" data-id="{{item._id}}">
+              {{item.quantity}}</view>
+            <view bindtap="addDishNum" data-item="{{item}}">
+              <image class="num_changer_image" src="/image/jia.png" />
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</scroll-view>
+
+<!-- 结算区域  -->
+<view class="statistics_space">
+  <view class="cart_space" bindtap="cascadeToggle">
+    <image class="cart_pattern" src="/image/shopCart.png"></image>
+  </view>
+  <view class="total_count">总计: {{totalPrice}}元，{{totalNum}}件菜品</view>
+  <view class="decide_choice" bindtap="jumpOrderPage">选好了</view>
+</view>
+
+
+<!--购物车弹窗  -->
+<view hidden="{{maskFlag}}" class="popup_mask" bindtap="cascadeToggle"></view>
+
+<view animation="{{animationData}}" class="cart_popup">
+  <view class="cart_title">
+    <span class="cart_close" bindtap="cascadeToggle">返回</span>购物车
+    <span class="cart_deleteAll" bindtap="cleanList">清空购物车</span>
+  </view>
+  <scroll-view scroll-y style="height:250px;margin-top:35px">
+    <block wx:for="{{cartList}}" wx:key="index">
+      <view class="dish_dinfo" wx:if="{{item.quantity > 0}}">
+        <view class="dish_dname" data-index="{{index}}">{{item.name}}</view>
+        <view class="dish_dprice" data-index="{{index}}">{{item.price}}</view>
+        <view class="price-box">
+          <view hidden="{{item.quantity<=0}}" data-item="{{item}}" bindtap="minusDishNum">
+            <image class="num_changer_image" src="/image/jian.png" />
+          </view>
+          <view class="number" style="color:#ff9600;margin-top:8rpx" hidden="{{item.quantity<=0}}" data-id="{{item.id}}">
+            {{item.quantity}}</view>
+          <view bindtap="addDishNum" data-item="{{item}}">
+            <image class="num_changer_image" src="/image/jia.png" />
+          </view>
+        </view>
+        <icon class="cart_delete_dish" type="clear" size="18" data-index="{{index}}" data-id="{{item._id}}"
+          bindtap="deleteByDish" />
+      </view>
+    </block>
+  </scroll-view>
+</view>

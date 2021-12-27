@@ -1,0 +1,27 @@
+<view class="tabRoot">
+  <!-- 小桌区域 -->
+  <view class="tab">
+    <text class="tabTip">当前小桌已排到第<text class="tabTipNum">{{xiaozhuoAll}}</text>位，已叫号到小桌{{xiaozhuonum}}号</text>
+    <text class="tabNum" data-type="1" bindtap="callNext">请小桌{{xiaozhuonum+1}}号就餐</text>
+  </view>
+  <!-- 大桌区域 -->
+  <view class="tab">
+    <text class="tabTip">当前大桌已排到第<text class="tabTipNum">{{dazhuoAll}}</text>位，已叫号到大桌{{dazhuonum}}号</text>
+    <text class="tabNum" data-type="2" bindtap="callNext">请大桌{{dazhuonum+1}}号就餐</text>
+  </view>
+</view>
+<view class="hot_tip">
+		待上菜名单
+	</view>
+<view wx:if="{{goodlist&&goodlist.length>0}}">
+	<block wx:for="{{goodlist}}">
+		<view class="good_item">
+			<image class="image_1" src="/image/上菜.png" />
+			<view class="alignment">
+				<view class="good_title" >名字：{{item.name}}</view>
+				<view class="good_sell">位置：{{item.address}} </view>
+				<view class="good_sell">备注：{{item.beizhu}}</view>
+			</view>
+		</view>
+	</block>
+</view>

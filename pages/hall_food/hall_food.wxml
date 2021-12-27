@@ -1,0 +1,104 @@
+<!-- 顶部轮播图 -->
+<view>
+	<swiper indicator-dots="{{true}}" indicator-color="#f4c903" autoplay="true" circular="true">
+		<block wx:for="{{banner}}" wx:key="banner">
+			<swiper-item>
+				<image src='{{item.picUrl}}' mode="scaleToFill" style="width:100%;height:100%;" />
+			</swiper-item>
+		</block>
+	</swiper>
+</view>
+
+<view class='scrollx'>
+    <view class="scroll-animation">为庆祝南开大学成立102周年，特推出活动：每满50减5元，使用会员卡支付在优惠金额基础上再减5元</view>
+</view>
+<view class="ordertext" wx:if="{{flag}}"bindscroll="leftScrollFn"><text>检测您上次来过，点过这些：</text></view>
+<view class="latestorderlist" wx:if="{{flag}}">
+  <scroll-view  class="oorder" scroll-y="true" scroll-with-animation="true">
+    <view wx:for="{{orderarr}}" data-item="item" wx:key="index" class="scroll-view-latestorder ">
+    <view class="order_title"><text decode="{{true}}">{{item.name}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
+    <view class="order_price"><text decode="{{true}}">{{item.price}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
+    <view class="ordervalue"><text decode="{{true}}">X{{item.quantity}}</text></view>
+    </view>
+    </view>
+    </view>
+  </scroll-view>
+</view>
+<button class="orderbutton" type="primary" bindtap="latestorder"    wx:if="{{flag}}" >再来一单</button>
+<!-- 菜单区域  -->
+<view class="dish_space">
+  <scroll-view scroll-y="true" scroll-with-animation="true" bindscroll="matchScroll" class="navigation_bar">
+    <view wx:for="{{menuArr}}" data-myid="{{item.id}}" wx:key="index"
+      class="scroll-view-item choice_button {{leftActiveNum==item.id ? 'chosen' : ''}}" bindtap="clickSort">{{item.title}}
+    </view>
+  </scroll-view>
+
+  <scroll-view scroll-y="true" scroll-with-animation="true" bindscroll="matchScroll" class="dish_detail"
+    scroll-into-view="top{{Tab}}">
+    <view wx:for="{{menuArr}}" wx:key="index" id="top{{item.id}}" class="scroll-view-item rightblock">
+      <view class="title">{{item.title}}</view>
+      <block wx:for="{{item.list}}" wx:key="index">
+        <view class="respective_dish">
+          <image class="dish_img" src="{{item.icon}}" />
+          <view class="dish_innerspace">
+            <view class="dish_name" data-index="{{index}}">{{item.name}}</view>
+            <view class="dish_sold">销量：{{item.sell}} </view>
+            <view class="add_or_minus">
+              <view class="dish_price" data-index="{{index}}">{{item.price}}</view>
+              <view class="num_changer">
+                <view bindtap="minusDishNum" data-item="{{item}}">
+                  <image class="num_changer_button" src="/image/jian.png" />
+                </view>
+                <view class="number" data-id="{{item._id}}">
+                  {{item.quantity}}</view>
+                <view bindtap="addDishNum" data-item="{{item}}">
+                  <image class="num_changer_button" src="/image/jia.png" />
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+</view>
+
+<!-- 结算区域  -->
+<view class="statistics_space" style="background-color: #ee3c06;">
+  <view class="cart_space" bindtap="cascadeToggle" >
+    <image class="cart_pattern" src="/image/shopCart.png"></image>
+  </view>
+  <view class="total_count">总计: {{totalPrice}}元，{{totalNum}}件菜品</view>
+  <view class="decide_choice" bindtap="jumpOrderPage">选好了</view>
+</view>
+
+
+<!--购物车弹窗  -->
+<view hidden="{{maskFlag}}" class="popup_mask" bindtap="cascadeToggle"></view>
+
+<view animation="{{animationData}}" class="cart_popup">
+  <view class="cart_title">
+    <span class="cart_close" bindtap="cascadeToggle">返回</span>购物车
+    <span class="cart_deleteAll" bindtap="cleanCart">清空购物车</span>
+  </view>
+  <scroll-view scroll-y style="height:250px;margin-top:35px">
+    <block wx:for="{{cartList}}" wx:key="index">
+      <view class="dish_dinfo" wx:if="{{item.quantity > 0}}">
+        <view class="dish_dname" data-index="{{index}}">{{item.name}}</view>
+        <view class="dish_dprice" data-index="{{index}}">{{item.price}}</view>
+        <view class="price-box">
+          <view hidden="{{item.quantity<=0}}" data-item="{{item}}" bindtap="minusDishNum">
+            <image class="num_changer_button" src="/image/jian.png" />
+          </view>
+          <view class="number" style="color:#ff9600;margin-top:8rpx" hidden="{{item.quantity<=0}}" data-id="{{item.id}}">
+            {{item.quantity}}</view>
+          <view bindtap="addDishNum" data-item="{{item}}">
+            <image class="num_changer_button" src="/image/jia.png" />
+          </view>
+        </view>
+        <icon class="cart_delete_dish" type="clear" size="18" data-index="{{index}}" data-id="{{item._id}}"
+          bindtap="deleteByDish" />
+      </view>
+    </block>
+  </scroll-view>
+</view>

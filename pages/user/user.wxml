@@ -1,0 +1,46 @@
+<!-- “ 我的 ” 界面 -->
+<view class="user_info" wx:if="{{isShowUserName}}">
+	<image class="user_head" src="{{userInfo.avatarUrl}}"></image>
+	<text class="user_wechatname">{{userInfo.realname?userInfo.realname:userInfo.nickName}}</text>
+	<view class="standby" wx:if="{{show}}">
+		<text class="standby" >{{standby}}   截止日期：{{endtime}}</text>
+	</view>
+	<text class="logout_label" catchtap="logout">退出登录</text>
+</view>
+<!-- 用户未登录，显示授权登录获取微信号信息  -->
+<view wx:if="{{!isShowUserName}}" class="login_label">
+	<button type="primary" bindtap="getUserProfile">授权登陆</button>
+</view>
+<!-- 查排号和看评价的行区域  -->
+<view class='line_5px' />
+<view wx:if="{{isShowUserName}}">
+	<view class="function_space">
+		<view bindtap='jumpQueue' class="function_name">
+			<image class="function_pattern" src="/image/mepaihao.png" />
+			<button class="button" plain="true" style="border: none; font-size: 20px;">查排号</button>
+		</view>
+		<view bindtap='jumpCommentPage' class="function_name">
+			<image class="function_pattern" src="/image/mepingjia.png" />
+			<button class="button" plain="true" style="border: none; font-size: 20px;">看评价</button>
+		</view>
+
+	</view>
+</view>
+<!-- 去反馈和找客服的行区域  -->
+<view class="function_space">
+	<view class="function_name">
+		<image class="function_pattern" src="/image/mekefu.png"/>
+		<button class="button" open-type="contact" plain="true" style="border: none; font-size: 20px;">找客服</button>
+	</view>
+	<view class="function_name">
+		<image class="function_pattern" src="/image/mefankui.png" />
+		<button class="button" open-type="feedback" plain="true " style="border: none; font-size: 20px;">去反馈</button>
+	</view>
+</view>
+<!-- 管理员登录的按钮  -->
+<view class="function_space">
+	<view bindtap='jumpAdmin' class="function_name">
+		<image class="function_pattern" src="/image/meguanli.png" />
+		<button class="button" plain="true" style="border: none; font-size: 20px;">管理员</button>
+	</view>
+</view>

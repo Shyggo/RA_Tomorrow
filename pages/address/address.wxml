@@ -1,12 +1,12 @@
 <map style="width:100%; height:1000rpx;" longitude="{{longitude}}" latitude="{{latitude}}" scale="17"
-  markers="{{markers}}"  bindmarkertap="navRoad" data-marker="{{markers[0]}}"
+  markers="{{markers}}"  bindmarkertap="locationShowerFunc" data-marker="{{markers[0]}}"
   show-location />
-<view class="phone" bindtap="Call">
-  地址：杭州市丁兰广场C座
+<view class="phone" bindtap="phoneCallFunc">
+  地址：南开一食堂
 </view>
-<view class="phone" bindtap="Call">
-  电话：2501902696(可点击拨打)
+<view class="phone" bindtap="phoneCallFunc">
+  电话：13522918897(可点击拨打)
 </view>
-<view class="phone" bindtap="Copy">
-  微信：2501902696(可点击复制)
+<view class="phone" bindtap="getWeChatFunc">
+  微信：13522918897(可点击复制)
 </view>
